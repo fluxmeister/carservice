@@ -1,0 +1,43 @@
+package com.vektorwebsolutions.carservice.web.dto;
+
+public class KlijentDTO {
+
+	private Long id;
+	protected String ime;
+	protected String prezime;
+	private String telefon;
+
+	
+	public Long getKlijentDtoId() {
+		return id;
+	}
+
+	public void setKlijentDtoId(Long l) {
+		this.id = l;
+	}
+
+	public String getKlijentDtoIme() {
+		return ime;
+	}
+
+	public void setKlijentDtoIme(String ime) {
+		this.ime = ime;
+	}
+
+	public String getKlijentDtoPrezime() {
+		return prezime;
+	}
+
+	public void setKlijentDtoPrezime(String prezime) {
+		this.prezime = prezime;
+	}
+
+
+	public String getKlijentDtoTelefon() {
+		return telefon;
+	}
+
+	public void setKlijentDtoTelefon(String telefon) {
+		this.telefon = telefon;
+	}
+}

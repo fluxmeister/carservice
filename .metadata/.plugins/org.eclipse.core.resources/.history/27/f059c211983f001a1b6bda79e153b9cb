@@ -1,0 +1,50 @@
+package com.vektorwebsolutions.carservice.web.dto;
+
+import org.hibernate.validator.constraints.NotBlank;
+
+public class KlijentDTO {
+
+	private Long klijentDtoId;
+	@NotBlank
+	protected String klijentDtoIme;
+	@NotBlank
+	protected String klijentDtoPrezime;
+	@NotBlank
+	private String klijentDtoTelefon;
+
+	
+	public Long getKlijentDtoId() {
+		return klijentDtoId;
+	}
+
+	public void setKlijentDtoId(Long l) {
+		this.klijentDtoId = l;
+	}
+
+	public String getKlijentDtoIme() {
+		return klijentDtoIme;
+	}
+
+	public void setKlijentDtoIme(String ime) {
+		this.klijentDtoIme = ime;
+	}
+
+	public String getKlijentDtoPrezime() {
+		return klijentDtoPrezime;
+	}
+
+	public void setPrezime(String prezime) {
+		this.klijentDtoPrezime = prezime;
+	}
+
+
+	public String getKlijentDtoTelefon() {
+		return klijentDtoTelefon;
+	}
+
+	public void setTelefon(String telefon) {
+		this.klijentDtoTelefon = telefon;
+	}
+
+	
+}

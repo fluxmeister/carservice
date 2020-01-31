@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: carservice
+Implementation-Version: 1.2.7.RELEASE
+Built-By: zeljko
+Implementation-Vendor-Id: com.vektorwebsolutions.www
+Build-Jdk: 1.8.0_231
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

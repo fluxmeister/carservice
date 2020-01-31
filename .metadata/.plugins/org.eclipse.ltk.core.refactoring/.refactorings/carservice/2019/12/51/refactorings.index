@@ -1,0 +1,9 @@
+1576725125967	Delete element
+1576725302931	Delete element
+1576726018925	Rename package 'com.vektorwebsolutions.www.carservice'
+1576726040386	Rename package 'com.vektorwebsolutions.www.model'
+1576726077057	Rename package 'com.vektorwebsolutions.model'
+1576726304512	Rename package 'repository'
+1576870928655	Move compilation unit
+1576994511170	Encapsulate field 'klijentNaziv'
+1576994522743	Encapsulate field 'klijentId'

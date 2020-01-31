@@ -1,0 +1,127 @@
+package ui;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import dao.PosedujeDAO;
+import model.Klijent;
+import model.RadniTermin;
+
+public class RadniTerminDAO {
+	
+	public static RadniTermin getRadniTerminByID(Connection conn, int id) {
+		RadniTermin radniTermin = null;
+		
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		try {
+			String query = "SELECT * FROM radni_termini WHERE termin_id = " + id;
+			
+			stmt = conn.createStatement();
+			rset = stmt.executeQuery(query);
+			
+			if (rset.next()) {
+//				int id = rset.getInt(1);
+				String naziv = rset.getString(2);
+				Date pocetak = rset.getDate(3);
+				Date kraj = rset.getDate(4);
+				
+				radniTermin = new RadniTermin(id, naziv, pocetak, kraj);
+			}
+		} catch (SQLException ex) {
+			System.out.println("Greška u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try {stmt.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+			try {rset.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+		}
+		return radniTermin;
+	}
+
+	public static List<RadniTermin> getAll(Connection conn) {
+		List<RadniTermin> radniTermini = new ArrayList<>();
+		
+		Statement stmt = null;
+		ResultSet rset = null;
+		try {
+			String query = "SELECT termin_id, naziv, pocetak, kraj FROM radni_termini";
+			
+			stmt = conn.createStatement();
+			rset = stmt.executeQuery(query);
+			
+			while (rset.next()) {
+				int index = 1;
+				int id = rset.getInt(index++);
+				String naziv = rset.getString(index++);
+				Date pocetak = rset.getDate(index++);
+				Date kraj = rset.getDate(index++);
+				
+				Klijent klijentKojiPosedujeVozilo = PosedujeDAO.getVlasnikByVoziloID(conn, id);
+				
+				RadniTermin radniTermin = new RadniTermin(id, naziv, pocetak, kraj);
+//				radniTermin.getKlijent(klijentKojiPosedujeVozilo);
+				radniTermini.add(radniTermin);
+			}
+		} catch (Exception ex) {
+			System.out.println("Greška u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try {stmt.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+			try {rset.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+		}
+		return radniTermini;
+	}
+
+	public static boolean add(Connection conn, RadniTermin rt) {
+		PreparedStatement pstmt = null;
+		try {
+			String query = "INSERT INTO `radni_termini` (`naziv`, `pocetak`, `kraj`) VALUES (?, ?, ?)";
+			
+			pstmt = conn.prepareStatement(query);
+			int index = 1;
+			pstmt.setInt(index++, rt.getId());
+			pstmt.setString(index++, rt.getNaziv());
+			pstmt.setDate(index++,  (java.sql.Date) rt.getPocetak());
+			pstmt.setDate(index++, (java.sql.Date) rt.getKraj());
+			
+			return pstmt.executeUpdate() == 1;
+		} catch (SQLException ex) {
+			System.out.println("Greška u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try {pstmt.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+		}
+		return false;
+	}
+
+	public static boolean update(Connection conn, RadniTermin rt) {
+		PreparedStatement pstmt = null;
+		try {
+			String query = "UPDATE `radni_termini` SET `naziv` = ?, `pocetak` = ?, `kraj` = ? WHERE `radni_termini`.`termin_id` = ?";
+			
+			pstmt = conn.prepareStatement(query);
+			int index = 1;
+			pstmt.setInt(index++, rt.getId());
+			pstmt.setString(index++, rt.getNaziv());
+			pstmt.setDate(index++, (java.sql.Date) rt.getPocetak());
+			pstmt.setDate(index++, (java.sql.Date) rt.getKraj());
+			
+			return pstmt.executeUpdate() == 1;
+		} catch(SQLException ex) {
+			System.out.println("Greška u SQL upitu!");
+			ex.printStackTrace();
+		} finally {
+			try{pstmt.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+		}
+		return false;
+		
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.vektorwebsolutions.carservice.web.dto;
+
+public class VoziloDTO {
+
+	private Long id;
+	protected Integer godiste;
+	protected String gorivo;
+	protected String markaModel;
+	protected String motTyp;
+	private String registracija;
+	private long klijentId;
+	private String klijentIme;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getRegistracija() {
+		return registracija;
+	}
+	public void setRegistracija(String registracija) {
+		this.registracija = registracija;
+	}
+	public String getMarkaModel() {
+		return markaModel;
+	}
+	public void setMarkaModel(String markaModel) {
+		this.markaModel = markaModel;
+	}
+	public String getGorivo() {
+		return gorivo;
+	}
+	public void setGorivo(String gorivo) {
+		this.gorivo = gorivo;
+	}
+	public int getGodiste() {
+		return godiste;
+	}
+	public void setGodiste(Integer godiste) {
+		this.godiste = godiste;
+	}
+	public String getMotTyp() {
+		return motTyp;
+	}
+	public void setMotTyp(String motTyp) {
+		this.motTyp = motTyp;
+	}
+	public long getKlijentId() {
+		return klijentId;
+	}
+	public void setKlijentId(long l) {
+		this.klijentId = l;
+	}
+	public String getKlijentIme() {
+		return klijentIme;
+	}
+	public void setKlijentIme(String klijentIme) {
+		this.klijentIme = klijentIme;
+	}
+
+		
+}

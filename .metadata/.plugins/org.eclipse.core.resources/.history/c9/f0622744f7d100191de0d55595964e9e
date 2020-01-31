@@ -1,0 +1,186 @@
+package ui;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.ParseException;
+
+import utils.PomocnaKlasa;
+
+public class ApplicationUI {
+	
+	public static void ispisiTekstOsnovneOpcije() {
+		
+		System.out.println("***************************************");
+		System.out.println("*************AUTO SERVIS***************");
+		System.out.println("*********  - osnovni meni - ***********");
+		System.out.println("\tOpcija 1 - Rad sa klijentima");
+		System.out.println("\tOpcija 2 - Rad sa vozilima");
+		System.out.println("\tOpcija 3 - Rad sa Firmama");
+		System.out.println("\tOpcija 4 - Rad sa radnim terminima");
+		System.out.println("\tOpcija 5 - Rad sa posedovanjem");
+		System.out.println("\tOpcija 6 - Rad sa radnim nalozima");
+		System.out.println("\tOpcija 7 - Rad sa serviserima");
+		System.out.println("\t\t ...");
+		System.out.println("\tOpcija 0 - IZLAZ IZ PROGRAMA");
+		System.out.println("***************************************");
+		
+	}
+	
+	public static void main( String[] args ) throws IOException, ParseException {
+		
+		Connection conn = null;
+		
+		String dbUrl = "jdbc:mysql://localhost:3306/car_service?useSSL=false";
+		String user = "fluxmeister";
+		String pass = "2143Pauchina";
+		
+		try {
+			// učitavanje MySQL drivera
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			// otvaranje konekcije sa databazom
+			conn = DriverManager.getConnection(dbUrl, user, pass);
+		} catch(Exception ex) {
+			System.out.println("Neuspela konekcija na bazu!");
+			ex.printStackTrace();
+			// kraj aplikacije
+			return;
+		} 
+		
+		Statement stmt = null;
+		ResultSet rset = null;
+		try {
+			// SQL upit
+			// OBAVEZNO PISATI NAZIVE TABELA I KOLONA IDENTICNO (cak i po case-u) KAO U SKRIPTI ZA KREIRANJE BAZE!
+			String query = "SELECT * FROM car_service";
+			
+			// kreiranje SQL naredbe, jednom za svaki SQL upit
+			stmt = conn.createStatement();
+			// izvrsavanje naredbe i prihvatanje rezultata (SELECT), jednom za svaki SQL upit
+			rset = stmt.executeQuery(query);
+			
+			System.out.printf("%-5s %-20s", "", ""); System.out.println();
+			System.out.println("===== ====================");
+			
+			// citanje rezultata upita
+			while (rset.next()) {
+				String `A` = rset.getString(1);
+				String `B` = rset.getString(2);
+				String `C` = rset.getString(3);
+				String `D` = rset.getString(4);
+				String `E` = rset.getString(5);
+				String `F` = rset.getString(6);
+				String `G` = rset.getString(7);
+				String `H` = rset.getString(8);
+				int `I` = rset.getString(9);
+				String `J` = rset.getString(10);
+				int `K` = rset.getString(11);
+//				String naziv = rset.getString(2);
+//				int ptt = rset.getInt("ptt");
+//				String naziv = rset.getString("naziv");
+
+//				System.out.printf("%-5s %-20s", ptt, naziv); System.out.println();
+			}
+			
+		} catch (SQLException exc) {
+			System.out.println("Greska u SQL upitu!");
+			exc.printStackTrace();
+		} finally {
+			// zatvaranje naredbe i rezultata
+//			try {
+//				rset.close();
+//				stmt.close();
+//			} catch (SQLException ex1) {
+//				ex1.printStackTrace();
+//			}
+			try {rset.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+			try {stmt.close();} catch (SQLException ex1) {ex1.printStackTrace();}
+		}
+		
+		
+		
+		// zatvaranje konekcije, jednom na kraju aplikacije
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+//		String sP = System.getProperty("file.separator");
+//		
+//		File klijentiFajl = new File( "." + sP + "data" + sP + "klijenti.csv" );
+//		KlijentUI.citajIzFajlaKlijente(klijentiFajl);
+//		
+//		File vozilaFajl = new File( "." + sP + "data" + sP + "vozila.csv" );
+//		VoziloUI.citajIzFajlaVozila(vozilaFajl);
+//		
+//		File posedujeFajl = new File( "." + sP + "data" + sP + "poseduje.csv" );
+//		PosedujeUI.citajIzFajlaPosedovanja(posedujeFajl);
+//		
+//		File radniTerminFajl = new File( "." + sP + "data" + sP + "radni_termini.csv" );
+//		RadniTerminUI.citajIzFajlaRadneTermine(radniTerminFajl);
+//		
+//		File radniNaloziFajl = new File( "." + sP + "data" + sP + "radni_nalozi.csv" );
+//		RadniNalogUI.citajIzFajlaRadneNaloge(radniNaloziFajl);
+		
+		
+		
+		int odluka = -1;
+		while( odluka != 0 ) {
+			
+			ApplicationUI.ispisiTekstOsnovneOpcije();
+			System.out.println("Vaš izbor:");
+			odluka = PomocnaKlasa.ocitajCeoBroj();
+			switch (odluka) {
+
+				case 0:
+					System.out.println("Završen rad.");
+					break;
+				case 1:
+					KlijentUI.meniKlijentUI();
+					break;
+				case 2:
+					VoziloUI.meniVoziloUI();
+					break;
+				case 3:
+					FirmaUI.meniFirmaUI();
+					break;
+				case 4:
+					RadniTerminUI.meniRadniTerminUI();
+					break;
+				case 5:
+					PosedujeUI.meniPosedujeUI();
+					break;
+				case 6:
+					RadniNalogUI.meniRadniNalogUI();
+					break;
+				case 7:
+					ServisiraUI.meniServisiraUI();
+					break;
+			}
+			
+		}
+		
+//		KlijentUI.pisiUFajlKlijente(klijentiFajl);
+//		VoziloUI.pisiUFajlVozila(vozilaFajl);
+//		PosedujeUI.pisiUFajlPoseduje(posedujeFajl);
+//		RadniTerminUI.pisiUFajlRadneTermine(radniTerminFajl);
+//		RadniNalogUI.pisiUFajlRadneNaloge(radniNaloziFajl);
+		
+		System.out.println("Program izvršen.");
+		
+	}
+
+}

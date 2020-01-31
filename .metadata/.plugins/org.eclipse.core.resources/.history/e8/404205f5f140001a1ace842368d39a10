@@ -1,0 +1,93 @@
+package com.vektorwebsolutions.carservice.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.vektorwebsolutions.carservice.model.Klijent;
+import com.vektorwebsolutions.carservice.service.KlijentService;
+import com.vektorwebsolutions.carservice.support.KlijentDTOToKlijent;
+import com.vektorwebsolutions.carservice.support.KlijentToKlijentDTO;
+import com.vektorwebsolutions.carservice.web.dto.KlijentDTO;
+
+@RestController
+@RequestMapping(value="/api/klijenti")
+public class ApiKlijentController {
+	@Autowired
+	private KlijentService klijentService;
+	
+	@Autowired
+	private KlijentToKlijentDTO toDTO;
+	
+	@Autowired
+	private KlijentDTOToKlijent toKlijent;
+	
+	@RequestMapping(method=RequestMethod.GET)
+	ResponseEntity<List<KlijentDTO>> getKlijenti(
+			@RequestParam(required=false, value="ime", defaultValue="ime") String ime, 
+			@RequestParam(required=false, value="prezime", defaultValue="prezime") String prezime, 
+			@RequestParam(required=false, value="telefon", defaultValue="telefon") String telefon, 
+			@RequestParam(value="pageNum", defaultValue="0") int pageNum){
+		
+		
+		Page<Klijent> klijenti;
+		
+		if(ime != null || prezime != null || telefon != null) {
+		
+			klijenti = klijentService.search(ime, prezime, telefon, pageNum);
+		} else {
+			klijenti = klijentService.findAll(pageNum);
+		}
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("totalPages", Integer.toString(klijenti.getTotalPages()));
+		return new ResponseEntity<>(
+				toDTO.convert(klijenti.getContent()), 
+				headers, 
+				HttpStatus.OK);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{id}")
+	public ResponseEntity<KlijentDTO> get(
+			@PathVariable Long id){
+		Klijent klijent = klijentService.findOne(id);
+		
+		if(klijent==null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
+		return new ResponseEntity<>(
+				toDTO.convert(klijent),
+				HttpStatus.OK);
+		
+	}
+			
+	
+	@RequestMapping(method=RequestMethod.POST, consumes="application/json")
+	public ResponseEntity<KlijentDTO> add(
+			@Validated @RequestBody KlijentDTO newKlijentDTO){
+		Klijent klijent = toKlijent.convert(newKlijentDTO);
+		klijentService.save(klijent);
+		
+		return new ResponseEntity<>(toDTO.convert(klijent),
+				HttpStatus.CREATED);
+	}
+	
+	@ExceptionHandler(value=DataIntegrityViolationException.class)
+	public ResponseEntity<Void> handle(){
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+}

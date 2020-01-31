@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;js&apos;&#x0D;&#x0A;- Original project: &apos;stanica&apos;&#x0D;&#x0A;- Destination element: &apos;js&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     angular.js&#x0D;&#x0A;     angular-route.js&#x0D;&#x0A;     bootstrap.js" description="Copy files" element1="src/main/resources/static/assets/js/angular.js" element2="src/main/resources/static/assets/js/angular-route.js" element3="src/main/resources/static/assets/js/bootstrap.js" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1579490851993" target="/carservice/src/main/resources/static/assets/js" units="0" version="1.0"/>
+</session>
