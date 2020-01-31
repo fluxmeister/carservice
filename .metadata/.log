@@ -687,7 +687,7 @@ java.util.concurrent.TimeoutException
 java.lang.NullPointerException
 	at org.eclipse.equinox.internal.p2.ui.sdk.scheduler.AutomaticUpdateScheduler$1.checkingForUpdates(AutomaticUpdateScheduler.java:153)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:73)
-!SESSION 2020-01-31 18:12:37.120 -----------------------------------------------
+!SESSION 2020-01-31 18:56:04.750 -----------------------------------------------
 eclipse.buildId=4.8.0.I20180611-0500
 java.version=1.8.0_231
 java.vendor=Oracle Corporation
@@ -695,12 +695,12 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-!ENTRY org.springframework.ide.eclipse.batch 4 0 2020-01-31 18:12:53.934
+!ENTRY org.springframework.ide.eclipse.batch 4 0 2020-01-31 18:56:12.573
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.batch [2225]
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
        org.springframework.ide.eclipse.config.ui [2255]
          Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
            -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
@@ -708,12 +708,12 @@ org.osgi.framework.BundleException: Could not resolve module: org.springframewor
                 Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
                   -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
                      org.springframework.ide.eclipse.quickfix [2269]
-                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
     -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Bundle was not resolved because of a uses contraint violation.
   org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; type="osgi.bundle"; version:Version="3.9.10.201909171046-RELEASE"; osgi.identity="org.springframework.ide.eclipse.quickfix"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; type="osgi.bundle"; version:Version="3.13.0.v20180409-1500"; osgi.identity="org.eclipse.osgi"; singleton:="true"] and javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] via two dependency chains.
 
@@ -743,7 +743,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.bestpractices 4 0 2020-01-31 18:12:55.382
+!ENTRY org.springframework.ide.eclipse.bestpractices 4 0 2020-01-31 18:56:12.849
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.bestpractices [2238]
@@ -779,7 +779,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2020-01-31 18:12:55.858
+!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2020-01-31 18:56:13.055
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.config.ui [2255]
@@ -818,7 +818,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.data.core 4 0 2020-01-31 18:12:56.411
+!ENTRY org.springframework.ide.eclipse.data.core 4 0 2020-01-31 18:56:13.174
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.data.core [2257]
@@ -854,7 +854,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.osgi 4 0 2020-01-31 18:12:56.433
+!ENTRY org.springframework.ide.eclipse.osgi 4 0 2020-01-31 18:56:13.260
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.osgi [2265]
@@ -867,10 +867,10 @@ org.osgi.framework.BundleException: Could not resolve module: org.springframewor
                 Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
                   -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
                      org.springframework.ide.eclipse.quickfix [2269]
-                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.beans
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.beans; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
     -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.beans
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.beans; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
     -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Bundle was not resolved because of a uses contraint violation.
@@ -902,7 +902,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.quickfix 4 0 2020-01-31 18:12:56.438
+!ENTRY org.springframework.ide.eclipse.quickfix 4 0 2020-01-31 18:56:13.338
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.quickfix [2269]
@@ -935,32 +935,32 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2020-01-31 18:12:56.446
+!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2020-01-31 18:56:13.431
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui [2276]
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
-    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-       org.springframework.ide.eclipse.webflow.ui.editor [2277]
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-              org.springframework.ide.eclipse.config.ui [2255]
-                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
-                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
-                     org.springframework.ide.eclipse.wizard [2279]
-                       Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
-                         -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
-                            org.springframework.ide.eclipse.quickfix [2269]
-                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
-    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
     -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [2255]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [2279]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [2269]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [2277]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.graph
     -> Export-Package: org.springframework.ide.eclipse.webflow.ui.graph; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.graph"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
        org.springframework.ide.eclipse.webflow.ui.graph [2278]
@@ -997,12 +997,12 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2020-01-31 18:12:56.452
+!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2020-01-31 18:56:13.448
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.editor [2277]
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
        org.springframework.ide.eclipse.config.ui [2255]
          Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
            -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
@@ -1010,12 +1010,12 @@ org.osgi.framework.BundleException: Could not resolve module: org.springframewor
                 Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
                   -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
                      org.springframework.ide.eclipse.quickfix [2269]
-                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
     -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
-    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Bundle was not resolved because of a uses contraint violation.
   org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; type="osgi.bundle"; version:Version="3.9.10.201909171046-RELEASE"; osgi.identity="org.springframework.ide.eclipse.quickfix"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; type="osgi.bundle"; version:Version="3.13.0.v20180409-1500"; osgi.identity="org.eclipse.osgi"; singleton:="true"] and javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] via two dependency chains.
 
@@ -1045,15 +1045,15 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2020-01-31 18:12:56.456
+!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2020-01-31 18:56:13.451
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.graph [2278]
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
     -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
        org.springframework.ide.eclipse.webflow.ui.editor [2277]
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
               org.springframework.ide.eclipse.config.ui [2255]
                 Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
                   -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
@@ -1061,12 +1061,12 @@ org.osgi.framework.BundleException: Could not resolve module: org.springframewor
                        Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
                          -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.10.201909171046-RELEASE"; singleton:="true"
                             org.springframework.ide.eclipse.quickfix [2269]
-                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
            -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
-         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
-           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
     -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.10.201909171046-RELEASE"; version="0.0.0"
   Bundle was not resolved because of a uses contraint violation.
@@ -1098,7 +1098,7 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.springframework.ide.eclipse.wizard 4 0 2020-01-31 18:12:56.473
+!ENTRY org.springframework.ide.eclipse.wizard 4 0 2020-01-31 18:56:13.456
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.wizard [2279]
@@ -1134,9 +1134,9 @@ Chain 2:
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
 
-!ENTRY org.eclipse.core.resources 4 567 2020-01-31 18:13:34.737
+!ENTRY org.eclipse.core.resources 4 567 2020-01-31 18:56:29.788
 !MESSAGE Workspace restored, but some problems occurred.
-!SUBENTRY 1 org.eclipse.core.resources 4 567 2020-01-31 18:13:34.737
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2020-01-31 18:56:29.788
 !MESSAGE Could not read metadata for 'stanica'.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/stanica)[567]: java.lang.Exception: The project description file (.project) for 'stanica' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -1183,7 +1183,7 @@ org.eclipse.core.internal.resources.ResourceException(/stanica)[567]: java.lang.
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:656)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:592)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1498)
-!SUBENTRY 2 org.eclipse.core.resources 4 567 2020-01-31 18:13:34.738
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2020-01-31 18:56:29.789
 !MESSAGE The project description file (.project) for 'stanica' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
 !STACK 0
 java.lang.Exception: The project description file (.project) for 'stanica' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
@@ -1231,15 +1231,15 @@ java.lang.Exception: The project description file (.project) for 'stanica' is mi
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:592)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1498)
 
-!ENTRY org.eclipse.jface 2 0 2020-01-31 18:13:50.240
+!ENTRY org.eclipse.jface 2 0 2020-01-31 18:56:41.385
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2020-01-31 18:13:50.240
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-01-31 18:56:41.386
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
 		Open a type in a Java editor,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1786e49f,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bfbe2a6,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
@@ -1247,19 +1247,19 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
 		,
 		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bfbe2a6,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@275ff5f8,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
-!ENTRY org.eclipse.egit.ui 2 0 2020-01-31 18:14:42.589
+!ENTRY org.eclipse.egit.ui 2 0 2020-01-31 18:57:17.254
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\zeljko'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-01-31 18:14:53.661
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-01-31 18:57:31.391
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20180504-0806
 !STACK 0
 com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
@@ -1278,17 +1278,17 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
 	... 9 more
 
-!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 18:22:27.636
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 19:14:52.943
 !MESSAGE No repository found at http://www.pramati.com/downloads/eclipse/updates/.
 
-!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2020-01-31 18:23:46.071
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1002 2020-01-31 19:16:18.886
 !MESSAGE Unable to read repository at https://marketplace.eclipse.org/content/spring-ide.
 !STACK 0
 java.io.IOException: https://marketplace.eclipse.org/content/spring-ide is not a valid repository location.
 	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:100)
 	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:60)
 	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:767)
-	at sun.reflect.GeneratedMethodAccessor148.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor149.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
@@ -1301,13 +1301,13 @@ java.io.IOException: https://marketplace.eclipse.org/content/spring-ide is not a
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:127)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:75)
 
-!ENTRY org.eclipse.equinox.p2.repository 2 0 2020-01-31 18:23:47.657
+!ENTRY org.eclipse.equinox.p2.repository 2 0 2020-01-31 19:16:20.610
 !MESSAGE Server returned lastModified <= 0 for https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite/content.jar
 
-!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 18:24:27.134
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 19:16:54.329
 !MESSAGE No repository found at https://ksadayamuthu.github.io/java-restful-plugin-feature/.
 
-!ENTRY org.eclipse.equinox.p2.core 4 0 2020-01-31 18:24:38.767
+!ENTRY org.eclipse.equinox.p2.core 4 0 2020-01-31 19:17:05.679
 !MESSAGE Provisioning exception
 !STACK 1
 org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://download.eclipse.org/technology/m2e/releases-for-indigo/1.4/.
@@ -1327,7 +1327,7 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:121)
 	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:60)
 	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:767)
-	at sun.reflect.GeneratedMethodAccessor148.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor149.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
@@ -1341,7 +1341,7 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 	at org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepositoryFactory.load(CompositeMetadataRepositoryFactory.java:121)
 	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:60)
 	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:767)
-	at sun.reflect.GeneratedMethodAccessor148.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor149.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
 	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.eclipse.oomph.util.ReflectUtil.invokeMethod(ReflectUtil.java:117)
@@ -1353,8 +1353,8 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:149)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:127)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:75)
-!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 18:24:38.769
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 19:17:05.727
 !MESSAGE No repository found at http://download.eclipse.org/technology/m2e/releases-for-indigo/1.4/.
 
-!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 18:26:22.219
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2020-01-31 19:18:59.440
 !MESSAGE No repository found at http://dist.springsource.com/release/TOOLS/composite/e3.6/bookmarks.xml.
