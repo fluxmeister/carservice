@@ -1,6 +1,6 @@
-CarService v2.0 - Copyright (C)  Zeljko Stevanovic aka fluxmeister, 2019. All Rights Reserved.
+CarService v2.0 - Copyright (C)  Zeljko Stevanovic aka fluxmeister, 2020. All Rights Reserved.
 
-Java program that handles with CarService entities: vehicles and customers.
+SpringBoot/AngularJS webapp that handles with CarService entities, such are vehicles and customers. Work orders are expected for implementation in future.
 
 
 REQUIREMENTS
@@ -14,7 +14,7 @@ TESTED PLATFORMS
 
 
 HISTORY
-    v2.0    - SpringBoot app, Angular.JS frontend
+    v2.0    - Spring/Hibernate/AngularJS/MySQL webapp
     v1.5.1	- added RadniTermin (Work Term)
 	v1.5.0	- added database support (MySQL)
     v1.2	- reading .xlsx files
@@ -32,4 +32,4 @@ LATEST VERSION
 
 fluxmeister <fluxmeister@hotmail.rs> <www.vektorwebsolutions.com>
 
-31-January-2019
+31-January-2020
