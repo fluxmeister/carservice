@@ -19,10 +19,10 @@ TESTED PLATFORMS
 HISTORY
     v2.0    - Spring/Hibernate/AngularJS/MySQL webapp
     v1.5.1	- added RadniTermin (Work Term)
-	  v1.5.0	- added database support (MySQL)
+    v1.5.0	- added database support (MySQL)
     v1.2	- reading .xlsx files
-	  v1.1	- displaying work orders for a working term,
-	  v1.0	- first public release
+    v1.1	- displaying work orders for a working term,
+    v1.0	- first public release
 
 
 LATEST VERSION
@@ -33,6 +33,6 @@ LATEST VERSION
 		https://github.com/fluxmeister/carservice
 
 
-fluxmeister <fluxmeister@hotmail.rs> <www.vektorwebsolutions.com>
+fluxmeister <zeljko@vektorwebsolutions.com> <www.vektorwebsolutions.com>
 
 31-January-2020
