@@ -32,19 +32,19 @@
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
-		<item value="480" key="width"/>
-		<item value="600" key="x"/>
-		<item value="205" key="y"/>
-		<item value="450" key="height"/>
+		<item key="width" value="480"/>
+		<item key="x" value="600"/>
+		<item key="y" value="205"/>
+		<item key="height" value="450"/>
 	</section>
 	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
-		<item value="480" key="width"/>
-		<item value="600" key="x"/>
-		<item value="151" key="y"/>
-		<item value="531" key="height"/>
+		<item key="width" value="480"/>
+		<item key="x" value="600"/>
+		<item key="y" value="151"/>
+		<item key="height" value="531"/>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
-		<item value="All Catalogs" key="catalog"/>
+		<item key="catalog" value="All Catalogs"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -101,5 +101,24 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Workspace\CarService\carservice"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item key="width" value="805"/>
+		<item key="height" value="450"/>
+		<item key="x" value="438"/>
+		<item key="y" value="205"/>
 	</section>
 </section>

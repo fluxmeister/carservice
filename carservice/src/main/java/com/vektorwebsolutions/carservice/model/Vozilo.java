@@ -1,11 +1,16 @@
 package com.vektorwebsolutions.carservice.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Vozilo {
@@ -27,8 +32,8 @@ public class Vozilo {
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Klijent klijent;
 	
-//	@OneToMany(mappedBy="vozilo", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-//	private List<RadniNalog> radniNalozi = new ArrayList<>();
+	@OneToMany(mappedBy="vozilo", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<RadniNalog> radniNalozi = new ArrayList<>();
 	
 	public Long getVoziloId() {
 		return this.id;
@@ -74,22 +79,22 @@ public class Vozilo {
 	}
 	public void setKlijent(Klijent klijent) {
 		this.klijent = klijent;
-//		if(!klijent.getVozila().contains(this)) {
-//			klijent.getVozila().add(this);
-//		}
+		if(!klijent.getVozila().contains(this)) {
+			klijent.getVozila().add(this);
+		}
 	}
 	
-//	public List<RadniNalog> getRadniNalozi() {
-//		return radniNalozi;
-//	}
-//	public void setRadniNalozi(List<RadniNalog> radniNalozi) {
-//		this.radniNalozi = radniNalozi;
-//	}
-//	public void addRadniNalog(RadniNalog radniNalog) {
-//		if(radniNalog.getVozilo() != this) {
-//			radniNalog.setVozilo(this);
-//		}
-//		radniNalozi.add(radniNalog);
-//	}
+	public List<RadniNalog> getRadniNalozi() {
+		return radniNalozi;
+	}
+	public void setRadniNalozi(List<RadniNalog> radniNalozi) {
+		this.radniNalozi = radniNalozi;
+	}
+	public void addRadniNalog(RadniNalog radniNalog) {
+		if(radniNalog.getVozilo() != this) {
+			radniNalog.setVozilo(this);
+		}
+		radniNalozi.add(radniNalog);
+	}
 	
 }

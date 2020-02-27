@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="dao.PosedujeDAO"/>
 <fullyQualifiedTypeName name="model.Klijent"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
@@ -42,22 +41,23 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
 <fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.hibernate.validator.constraints.NotBlank"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
-<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.repository.RadniNalogRepository"/>
 <fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.service.VoziloService"/>
 <fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.model.Vozilo"/>
 <fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
 <fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.model.Klijent"/>
-<fullyQualifiedTypeName name="org.springframework.core.convert.converter.Converter"/>
-<fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.model.RadniNalog"/>
-<fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.web.dto.RadniNalogDTO"/>
 <fullyQualifiedTypeName name="org.springframework.validation.annotation.Validated"/>
 <fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.core.convert.converter.Converter"/>
+<fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.web.dto.RadniNalogDTO"/>
+<fullyQualifiedTypeName name="com.vektorwebsolutions.carservice.model.RadniNalog"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>

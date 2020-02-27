@@ -27,8 +27,8 @@ public class Klijent {
 	@OneToMany(mappedBy="klijent", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Vozilo> vozila = new ArrayList<>();
 	
-//	@OneToMany(mappedBy="klijent", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-//	private List<RadniNalog> radniNalozi = new ArrayList<>();
+	@OneToMany(mappedBy="klijent", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<RadniNalog> radniNalozi = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -80,4 +80,15 @@ public class Klijent {
 		vozila.add(vozilo);
 	}
 
+	public List<RadniNalog> getRadniNalozi() {
+		return radniNalozi;
+	}
+
+	public void setRadniNalozi(List<RadniNalog> radniNalozi) {
+		this.radniNalozi = radniNalozi;
+	}
+
+	
+	
+	
 }

@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=D\:\\Workspace\\CarService\\carservice\\.git;
-GitRepositoriesView.GitDirectories.relative=carservice\\.git;
+GitRepositoriesView.GitDirectories=D\:\\Workspace\\CarService\\carservice\\.git;D\:\\Workspace\\CarService\\.git;
+GitRepositoriesView.GitDirectories.relative=carservice\\.git;.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

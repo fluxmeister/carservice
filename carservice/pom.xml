@@ -15,7 +15,7 @@
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
 		<m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<tomcat.version>7.0.59</tomcat.version>
 	</properties>
 
@@ -41,13 +41,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.6</version>
-			</dependency>
-		
-	</dependencies>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.46</version>
+		</dependency>
+  </dependencies>
 	<build>
 		<plugins>
 			<plugin>
