@@ -32,8 +32,8 @@ public class Vozilo {
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Klijent klijent;
 	
-	@OneToMany(mappedBy="vozilo", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	private List<RadniNalog> radniNalozi = new ArrayList<>();
+//	@OneToMany(mappedBy="vozilo", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+//	private List<RadniNalog> radniNalozi = new ArrayList<>();
 	
 	public Long getVoziloId() {
 		return this.id;
@@ -84,17 +84,17 @@ public class Vozilo {
 		}
 	}
 	
-	public List<RadniNalog> getRadniNalozi() {
-		return radniNalozi;
-	}
-	public void setRadniNalozi(List<RadniNalog> radniNalozi) {
-		this.radniNalozi = radniNalozi;
-	}
-	public void addRadniNalog(RadniNalog radniNalog) {
-		if(radniNalog.getVozilo() != this) {
-			radniNalog.setVozilo(this);
-		}
-		radniNalozi.add(radniNalog);
-	}
+//	public List<RadniNalog> getRadniNalozi() {
+//		return radniNalozi;
+//	}
+//	public void setRadniNalozi(List<RadniNalog> radniNalozi) {
+//		this.radniNalozi = radniNalozi;
+//	}
+//	public void addRadniNalog(RadniNalog radniNalog) {
+//		if(radniNalog.getVozilo() != this) {
+//			radniNalog.setVozilo(this);
+//		}
+//		radniNalozi.add(radniNalog);
+//	}
 	
 }

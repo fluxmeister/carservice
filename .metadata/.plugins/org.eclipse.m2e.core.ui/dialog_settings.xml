@@ -104,6 +104,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Workspace\heroku"/>
 			<item value="D:\Workspace\CarService\carservice"/>
 		</list>
 		<list key="projectNameTemplate">
