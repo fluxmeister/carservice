@@ -1,6 +1,6 @@
 # carservice
 ![](images/homepage.png)
-CarService v2.0 - Copyright (C)  Zeljko Stevanovic aka fluxmeister, 2020. All Rights Reserved.
+CarService v2.2 - Copyright (C)  Zeljko Stevanovic aka fluxmeister, 2020. All Rights Reserved.
 
 SpringBoot/AngularJS webapp that handles with CarService entities, such are vehicles and customers. 
 Work orders are expected for implementation in the future.
@@ -17,7 +17,8 @@ TESTED PLATFORMS
 
 
 HISTORY
-    v2.0    - Spring/Hibernate/AngularJS/MySQL webapp
+    v2.2	- Heroku implementation
+    v2.0    	- Spring/Hibernate/AngularJS/MySQL webapp
     v1.5.1	- added RadniTermin (Work Term)
     v1.5.0	- added database support (MySQL)
     v1.2	- reading .xlsx files
