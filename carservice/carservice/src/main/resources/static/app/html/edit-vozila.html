@@ -1,0 +1,44 @@
+<div ng-controller="editVoziloCtrl">
+	<h1><u><b>Izmena vozila</b></u></h1>
+	
+	<div class="row">
+				
+		<div class="col-12 col-lg-5">
+		
+			<form>
+
+				<div class="form-group">
+					<label for="godiste">Godište</label>
+					<input id="godiste" class="form-control" ng-model="vozilo.godiste"/>
+				</div>
+				<div class="form-group">
+					<label for="gorivo">Vrsta goriva</label>
+					<input id="gorivo" class="form-control" ng-model="vozilo.gorivo"/>
+				</div>
+				<div class="form-group">
+					<label for="markaModel">Marka i model vozila</label>
+					<input id="markaModel" class="form-control" ng-model="vozilo.markaModel"/>
+				</div>
+				<div class="form-group">
+					<label for="motTyp">Tip motora</label>
+					<input id="motTyp" class="form-control" ng-model="vozilo.motTyp"/>
+				</div>
+				<div class="form-group">
+					<label for="registracija">Registracija</label>
+					<input id="registracija" class="form-control" ng-model="vozilo.registracija"/>
+				</div>
+			
+				<div class="form-group">
+					<label for="klijentId">Vlasnik vozila</label>
+					<select id="klijentId" class="form-control" ng-model="vozilo.klijentId">
+						<option ng-repeat="klijent in klijenti" value="{{klijent.id}}">{{klijent.ime}}&nbsp;{{klijent.prezime}}&nbsp;{{klijent.telefon}}</option>
+					</select>
+				</div>
+								
+				<button class="btn btn-primary" ng-click="doEdit()">Sačuvaj izmene</button>
+				
+			</form>
+		
+		</div>
+	</div>
+</div>
