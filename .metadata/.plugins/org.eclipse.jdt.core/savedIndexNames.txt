@@ -77,7 +77,6 @@ INDEX VERSION 1.131+D:\Workspace\heroku\.metadata\.plugins\org.eclipse.jdt.core
 3946058474.index
 1134257778.index
 1533752223.index
-4201580506.index
 3149747983.index
 2935755738.index
 2034804574.index
