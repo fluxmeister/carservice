@@ -49,7 +49,7 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 				$scope.totalPages = res.headers('totalPages');
 			},
 			function error(){
-				alert("Neuspešno dobavljanje klijenata.");
+				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
@@ -61,7 +61,7 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 				$scope.klijenti = res.data;
 			},
 			function error(){
-				alert("Neuspešno dobavljanje klijenata.");
+				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
@@ -81,7 +81,7 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 
                 },
                 function error(){
-                    alert("Neuspešno čuvanje klijenta!");
+                    alert("Unsuccessful saving clients data!");
                 }
             );
         }
@@ -95,7 +95,7 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 				getKlijenti();
 			},
 			function error(){
-				alert("Neuspešno brisanje klijenta.")
+				alert("Unsuccessful deleting client's data.")
 			}
 		);
 	}
@@ -132,7 +132,7 @@ carServiceApp.controller("editKlijentCtrl", function($scope, $http, $routeParams
     			$scope.klijenti = res.data;
     		},
     		function error(){
-    			alert("Neuspešno dobavljanje klijenata.")
+    			alert("Unsuccessful getting clients data.")
     		}
     	);
     }
@@ -203,7 +203,7 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 				$scope.totalPages = res.headers("totalPages");
 			},
 			function error(){
-				alert("Neupešno dobavljanje vozila.");
+				alert("Unsuccessful getting vehicles data.");
 			}
 		);
 	}
@@ -216,7 +216,7 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 				$scope.klijenti = res.data;
 			},
 			function error(){
-				alert("Neuspešno dobavljanje klijenata.");
+				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
@@ -238,7 +238,7 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 
 			},
 			function error(){
-				alert("Neuspešno čuvanje vozila!");
+				alert("Unsuccessful saving vehicle's data!");
 			}
 		);
 	}
@@ -252,7 +252,7 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 				getVozila();
 			},
 			function error(){
-				alert("Neuspešno brisanje vozila.");
+				alert("Unsuccessful deleting vehicle's data.");
 			}
 		);
 	}
@@ -312,7 +312,7 @@ carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams,
 				$scope.klijenti = res.data;
 			},
 			function error(){
-				alert("Neuspešno dobavljanje klijenata.");
+				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
@@ -325,7 +325,7 @@ carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams,
 				$scope.vozilo = res.data;
 			},
 			function error(){
-				alert("Neuspešno dobavljanje vozila.");
+				alert("Unsuccessful getting vehicles data.");
 			}
 		);
 	}
@@ -389,7 +389,7 @@ carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams,
 				$location.path("/vozila");
 			},
 			function error(){
-				alert("Neuspešno čuvanje vozila.");
+				alert("Unsuccessful saving vehicles.");
 			}
 		);
 	}
