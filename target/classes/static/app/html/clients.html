@@ -1,0 +1,86 @@
+<div ng-controller="clientsCtrl">
+	<h1><u><b>Clients</b></u></h1>
+		<br>
+		<br>
+		<h2>Entering new client data:</h2>
+		<form>
+			<div class="form-group">
+				<label for="name">Client's name:</label>
+				<input id="name" class="form-control" ng-model="newClient.name"/>
+			</div>
+			<div class="form-group">
+				<label for="surname">Client's surname:</label>
+				<input id="surname" class="form-control" ng-model="newClient.surname"/>
+			</div>
+			<div class="form-group">
+				<label for="phone">Client's phone number:</label>
+				<input id="phone" class="form-control" ng-model="newClient.phone"/>
+			</div>
+			<button class="btn btn-primary" ng-click="doAddClient()">Add</button>
+		</form>
+					
+        <form>
+        <br>
+        <br>
+		<h2>Client search:</h2>		
+			<div class="form-group">
+				<label for="name">Client:</label>
+				<select id="searchedClient" class="form-control" ng-model="searchParams.id">
+					<option ng-repeat="searchedClient in clients" value="{{searchedClient.clientId}}">{{searchedClient.name}}&nbsp;{{searchedClient.surname}}&nbsp;{{searchedClient.phone}}</option>
+				</select>
+				
+			</div>
+		<!-- 	<div class="form-group">
+				<label for="prezime">Prezime klijenta:</label>
+				<select id="prezime" class="form-control" ng-model="trazeniKlijent.prezime">
+					<option ng-repeat="trazeniKlijent in klijenti" value="{{trazeniKlijent.prezime}}">{{trazeniKlijent.prezime}}</option>
+				</select>
+			</div> -->
+			<!-- <div class="form-group">
+				<label for="telefon">Broj telefona klijenta:</label>
+				<input id="telefon" class="form-control" ng-model="trazeniKlijent.telefon"/>
+				
+			</div> -->
+							
+			<button class="btn btn-primary" ng-click="doSearch()">Search</button>
+			
+        </form>
+
+
+        
+		
+		
+		<div class="btn-group float-right">
+			<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-info">Previous page</button>
+			<button ng-disabled="pageNum >= totalPages - 1" ng-click="changePage(1)" class="btn btn-info">Next page</button>
+		</div>
+		
+		<br>
+	
+		
+
+
+
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Name</th>
+					<th>Surname</th>
+					<th>Phone number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="client in clients">
+					<td>{{client.name}}</td>
+					<td>{{client.surname}}</td>
+					<td>{{client.phone}}</td>
+					 
+					<td>
+						<button class="btn btn-warning" ng-click="goToEdit(client.id)">Edit</button>
+						<button class="btn btn-danger" ng-click="doDelete(client.id)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>

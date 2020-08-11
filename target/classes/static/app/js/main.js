@@ -6,46 +6,46 @@ carServiceApp.controller("homeCtrl", function($scope){
 });
 
 
-carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
+carServiceApp.controller("clientsCtrl", function($scope, $http, $location){
 
-	$scope.klijenti = [];
-	$scope.vozila = [];
+	$scope.clients = [];
+	$scope.vehicles = [];
 
-	$scope.newKlijent = {};
-	$scope.newKlijent.ime = "";
-	$scope.newKlijent.prezime = "";
-	$scope.newKlijent.telefon = "";
+	$scope.newClient = {};
+	$scope.newClient.name = "";
+	$scope.newClient.surname = "";
+	$scope.newClient.phone = "";
 	
 	
 	$scope.searchParams = {};
-	$scope.searchParams.ime = {};
-	$scope.searchParams.prezime = {};
-	$scope.searchParams.telefon = {};
+	$scope.searchParams.name = {};
+	$scope.searchParams.surname = {};
+	$scope.searchParams.phone = {};
 	
 	$scope.pageNum = 0;
 	$scope.totalPages = 1;
 	
-	var klijentiUrl = "/api/klijenti";
-	var vozilaUrl = "/api/vozila";
+	var clientsUrl = "/api/clients";
+	var vehiclesUrl = "/api/vehicles";
 	
    
-	var getKlijenti = function(){
+	var getClients = function(){
 		var config = {params: {}};
 		
-		if($scope.searchParams.ime != ""){
-			config.params.ime = $scope.searchParams.ime;
+		if($scope.searchParams.name != ""){
+			config.params.name = $scope.searchParams.name;
 		}
-		if($scope.searchParams.prezime != ""){
-			config.params.prezime = $scope.searchParams.prezime;
+		if($scope.searchParams.surname != ""){
+			config.params.surname = $scope.searchParams.surname;
 		}
-		if($scope.searchParams.telefon != ""){
-			config.params.telefon = $scope.searchParams.telefon;
+		if($scope.searchParams.phone != ""){
+			config.params.phone = $scope.searchParams.phone;
 		}
 		config.params.pageNum = $scope.pageNum;
 		
-		$http.get(klijentiUrl, config).then(
+		$http.get(clientsUrl, config).then(
 			function success(res){
-				$scope.klijenti = res.data;
+				$scope.clients = res.data;
 				$scope.totalPages = res.headers('totalPages');
 			},
 			function error(){
@@ -53,31 +53,31 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 			}
 		);
 	}
-	getKlijenti();
+	getClients();
 	
-	var getKlijenti = function(){
-		$http.get(klijentiUrl).then(
+	var getClients = function(){
+		$http.get(clientsUrl).then(
 			function success(res){
-				$scope.klijenti = res.data;
+				$scope.clients = res.data;
 			},
 			function error(){
 				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
-	getKlijenti();
+	getClients();
 	
 	
 	
-     $scope.doAddKlijent = function(){
-            $http.post(klijentiUrl, $scope.newKlijent).then(
+     $scope.doAddClient = function(){
+            $http.post(clientsUrl, $scope.newClient).then(
                 function success(){
-                    getKlijenti();
+                    getClients();
 
-                    $scope.newKlijent = {};
-                    $scope.newKlijent.ime = "";
-                    $scope.newKlijent.prezime = "";
-                    $scope.newKlijent.telefon = "";
+                    $scope.newClient = {};
+                    $scope.newClient.name = "";
+                    $scope.newClient.surname = "";
+                    $scope.newClient.phone = "";
 
                 },
                 function error(){
@@ -89,10 +89,10 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 	
 	
 	$scope.doDelete = function(id){
-		var promise = $http.delete(klijentiUrl + "/" + id);
+		var promise = $http.delete(clientsUrl + "/" + id);
 		promise.then(
 			function success(){
-				getKlijenti();
+				getClients();
 			},
 			function error(){
 				alert("Unsuccessful deleting client's data.")
@@ -101,105 +101,105 @@ carServiceApp.controller("klijentiCtrl", function($scope, $http, $location){
 	}
 	
 	$scope.goToEdit = function(id){
-		$location.path("/klijenti/edit/" + id);
+		$location.path("/clients/edit/" + id);
 	}
 	
 	$scope.changePage = function(direction){
 		$scope.pageNum = $scope.pageNum + direction;
-		getKlijenti();
+		getClients();
 	}
 	
 	$scope.doSearch = function(){
 		$scope.pageNum = 0;
-		getKlijenti();
+		getClients();
 	}
 	
     
 });
 
-carServiceApp.controller("editKlijentCtrl", function($scope, $http, $routeParams, $location){
-	var vozilaUrl = "/api/vozila/" + $routeParams.id;
-	var klijentiUrl = "/api/klijenti";
+carServiceApp.controller("editClientCtrl", function($scope, $http, $routeParams, $location){
+	var vehiclesUrl = "/api/vehicles/" + $routeParams.id;
+	var clientsUrl = "/api/clients";
 
 	$scope.searchParams = {};
-    $scope.searchParams.ime = "";
-    $scope.searchParams.prezime = "";
-    $scope.searchParams.telefon = "";
+    $scope.searchParams.name = "";
+    $scope.searchParams.surname = "";
+    $scope.searchParams.phone = "";
 
-    var getKlijenti = function(){
-    	$http.get(klijentiUrl).then(
+    var getClients = function(){
+    	$http.get(clientsUrl).then(
     		function success(res){
-    			$scope.klijenti = res.data;
+    			$scope.clients = res.data;
     		},
     		function error(){
     			alert("Unsuccessful getting clients data.")
     		}
     	);
     }
-    getKlijenti();
+    getClients();
 
 })
 
 
 
 
-carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
+carServiceApp.controller("vehiclesCtrl", function($scope, $http, $location){
 	
-	$scope.klijenti = [];
-	$scope.vozila = [];
+	$scope.clients = [];
+	$scope.vehicles = [];
 	
-	$scope.newVozilo = {};
-	$scope.newVozilo.godiste = "";
-	$scope.newVozilo.gorivo = "";
-	$scope.newVozilo.markaModel = "";
-	$scope.newVozilo.motTyp = "";
-	$scope.newVozilo.registracija = "";
-	$scope.newVozilo.klijentId = "";
+	$scope.newVehicle = {};
+	$scope.newVehicle.year = "";
+	$scope.newVehicle.fuel = "";
+	$scope.newVehicle.brandMake = "";
+	$scope.newVehicle.engine = "";
+	$scope.newVehicle.plates = "";
+	$scope.newVehicle.clientId = "";
 
 	$scope.searchParams = {};
-	$scope.searchParams.godiste = "";
-	$scope.searchParams.gorivo = "";
-	$scope.searchParams.markaModel = "";
-	$scope.searchParams.motTyp = "";
-	$scope.searchParams.registracija = "";
-	$scope.searchParams.klijentId = "";
+	$scope.searchParams.year = "";
+	$scope.searchParams.fuel = "";
+	$scope.searchParams.brandMake = "";
+	$scope.searchParams.engine = "";
+	$scope.searchParams.plates = "";
+	$scope.searchParams.clientId = "";
 	
 	$scope.pageNum = 0;
 	$scope.totalPages = 1;
 	
 	
-	var vozilaUrl = "/api/vozila";
-	var klijentiUrl = "/api/klijenti";
+	var vehiclesUrl = "/api/vehicles";
+	var clientsUrl = "/api/clients";
 	
 
-	var getVozila = function(){
+	var getVehicles = function(){
 		var config = {params: {}};		
 		
 		
-		if($scope.searchParams.godiste != ""){
-			config.params.godiste = $scope.searchParams.godiste;
+		if($scope.searchParams.year != ""){
+			config.params.year = $scope.searchParams.year;
 		}
-		if($scope.searchParams.gorivo != ""){
-			config.params.gorivo = $scope.searchParams.gorivo;
+		if($scope.searchParams.fuel != ""){
+			config.params.fuel = $scope.searchParams.fuel;
 		}
-		if($scope.searchParams.markaModel != ""){
-			config.params.markaModel = $scope.searchParams.markaModel;
+		if($scope.searchParams.brandMake != ""){
+			config.params.brandMake = $scope.searchParams.brandMake;
 		}
-		if($scope.searchParams.motTyp != ""){
-			config.params.motTyp = $scope.searchParams.motTyp;
+		if($scope.searchParams.engine != ""){
+			config.params.engine = $scope.searchParams.engine;
 		}
-		if($scope.searchParams.registracija != ""){
-			config.params.registracija = $scope.searchParams.registracija;
+		if($scope.searchParams.plates != ""){
+			config.params.plates = $scope.searchParams.plates;
 		}
-		if($scope.searchParams.klijentId != ""){
-			config.params.klijentId = $scope.searchParams.klijentId;
+		if($scope.searchParams.clientId != ""){
+			config.params.clientId = $scope.searchParams.clientId;
 		}
 		
 		config.params.pageNum = $scope.pageNum;
 		
-		$http.get(vozilaUrl, config).then(
+		$http.get(vehiclesUrl, config).then(
 			function success(res){
-				$scope.vozila = res.data;
+				$scope.vehicles = res.data;
 				$scope.totalPages = res.headers("totalPages");
 			},
 			function error(){
@@ -207,34 +207,34 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 			}
 		);
 	}
-	getVozila();
+	getVehicles();
 	
 	
-	var getKlijenti = function(){
-		$http.get(klijentiUrl).then(
+	var getClients = function(){
+		$http.get(clientsUrl).then(
 			function success(res){
-				$scope.klijenti = res.data;
+				$scope.clients = res.data;
 			},
 			function error(){
 				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
-	getKlijenti();
+	getClients();
 	
 	
 	$scope.doAdd = function(){
-		$http.post(vozilaUrl, $scope.newVozilo).then(
+		$http.post(vehiclesUrl, $scope.newVehicle).then(
 			function success(){
-				getVozila();
+				getVehicles();
 				
-				$scope.newVozilo = {};
-				$scope.newVozilo.godiste = "";
-				$scope.newVozilo.gorivo = "";
-				$scope.newVozilo.markaModel = "";
-				$scope.newVozilo.motTyp = "";
-				$scope.newVozilo.registracija = "";
-				$scope.klijentId = "";
+				$scope.newVehicle = {};
+				$scope.newVehicle.year = "";
+				$scope.newVehicle.fuel = "";
+				$scope.newVehicle.brandMake = "";
+				$scope.newVehicle.engine = "";
+				$scope.newVehicle.plates = "";
+				$scope.clientId = "";
 
 			},
 			function error(){
@@ -246,10 +246,10 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 	
 	
 	$scope.doDelete = function(id){
-		var promise = $http.delete(vozilaUrl + "/" + id);
+		var promise = $http.delete(vehiclesUrl + "/" + id);
 		promise.then(
 			function success(){
-				getVozila();
+				getVehicles();
 			},
 			function error(){
 				alert("Unsuccessful deleting vehicle's data.");
@@ -258,17 +258,17 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 	}
 	
 	$scope.goToEdit = function(id){
-		$location.path("/vozila/edit/" + id);
+		$location.path("/vehicles/edit/" + id);
 	}
 	
 	$scope.changePage = function(direction){
 		$scope.pageNum = $scope.pageNum + direction;
-		getVozila();
+		getVehicles();
 	}
 	
 	$scope.doSearch = function(){
 		$scope.pageNum = 0;
-		getVozila();
+		getVehicles();
 	}
 	
 //	$scope.doReserve = function(id){
@@ -288,41 +288,41 @@ carServiceApp.controller("vozilaCtrl", function($scope, $http, $location){
 });
 
 
-carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams, $location){
+carServiceApp.controller("editVehicleCtrl", function($scope, $http, $routeParams, $location){
 	
-	var voziloUrl = "/api/vozila/" + $routeParams.id;
-	var klijentiUrl = "/api/klijenti";
+	var vehicleUrl = "/api/vehicles/" + $routeParams.id;
+	var clientsUrl = "/api/clients";
 
-	$scope.klijenti = [];
-	$scope.vozila = [];
+	$scope.clients = [];
+	$scope.vehicles = [];
 	
 	$scope.searchParams = {};
-	$scope.searchParams.godiste = "";
-	$scope.searchParams.gorivo = "";
-	$scope.searchParams.markaModel = "";
-	$scope.searchParams.motTyp = "";
-	$scope.searchParams.registracija = "";
-	$scope.searchParams.klijentId = "";
+	$scope.searchParams.year = "";
+	$scope.searchParams.fuel = "";
+	$scope.searchParams.brandMake = "";
+	$scope.searchParams.engine = "";
+	$scope.searchParams.plates = "";
+	$scope.searchParams.clientId = "";
 
 	
 	
-	var getKlijenti = function(){
-		$http.get(klijentiUrl).then(
+	var getClients = function(){
+		$http.get(clientsUrl).then(
 			function success(res){
-				$scope.klijenti = res.data;
+				$scope.clients = res.data;
 			},
 			function error(){
 				alert("Unsuccessful getting clients data.");
 			}
 		);
 	}
-	getKlijenti();
+	getClients();
 	
 	
-	var getVozilo = function(){
-		$http.get(voziloUrl).then(
+	var getVehicle = function(){
+		$http.get(vehicleUrl).then(
 			function success(res){
-				$scope.vozilo = res.data;
+				$scope.vehicle = res.data;
 			},
 			function error(){
 				alert("Unsuccessful getting vehicles data.");
@@ -332,7 +332,7 @@ carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams,
 	//Ako bismo želeli da radimo kaskadiranje radi omogućavanja ng-selected odabira klijenta,
 	//onda bismo ovo morali da prebacimo u success callback pod getKlijenti. Tu je izostavljen
 	//taj mehanizam radi jednostavnosti.
-	getVozilo();
+	getVehicle();
 	
 /*	var getVozila = function(){
 		var config = {params: {}};		
@@ -374,19 +374,19 @@ carServiceApp.controller("editVoziloCtrl", function($scope, $http, $routeParams,
 
 	
 	$scope.doEdit = function(){
-		$http.put(voziloUrl, $scope.vozila).then(
+		$http.put(vehicleUrl, $scope.vehicles).then(
 			function success(){
-				getVozila();
+				getVehicles();
 				
-				$scope.vozilo = {};
-				$scope.vozilo.godiste = "";
-				$scope.vozilo.gorivo = "";
-				$scope.vozilo.markaModel = "";
-				$scope.vozilo.motTyp = "";
-				$scope.vozilo.registracija = "";
-				$scope.klijentId = "";
+				$scope.vehicle = {};
+				$scope.vehicle.year = "";
+				$scope.vehicle.fuel = "";
+				$scope.vehicle.brandMake = "";
+				$scope.vehicle.engine = "";
+				$scope.vehicle.plates = "";
+				$scope.clientId = "";
 				
-				$location.path("/vozila");
+				$location.path("/vehicles");
 			},
 			function error(){
 				alert("Unsuccessful saving vehicles.");
@@ -406,19 +406,19 @@ carServiceApp.config(['$routeProvider', function($routeProvider) {
 			templateUrl : '/app/html/home.html',
 			controller: 'homeCtrl'
 		})
-		.when('/vozila', {
-			templateUrl : '/app/html/vozila.html',
-			controller: 'vozilaCtrl'
+		.when('/vehicles', {
+			templateUrl : '/app/html/vehicles.html',
+			controller: 'vehiclesCtrl'
 		})
-		.when('/klijenti', {
-			templateUrl : '/app/html/klijenti.html',
-			controller: 'klijentiCtrl'
+		.when('/clients', {
+			templateUrl : '/app/html/clients.html',
+			controller: 'clientsCtrl'
 		})
-		.when('/vozila/edit/:id', {
-			templateUrl : '/app/html/edit-vozila.html'
+		.when('/vehicles/edit/:id', {
+			templateUrl : '/app/html/edit-vehicles.html'
 		})
-		.when('/klijenti/edit/:id', {
-			templateUrl : '/app/html/edit-klijenti.html'
+		.when('/clients/edit/:id', {
+			templateUrl : '/app/html/edit-clients.html'
 		})
 		.otherwise({
 			redirectTo: '/'

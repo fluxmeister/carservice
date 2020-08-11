@@ -1,0 +1,40 @@
+<div ng-controller="editClientCtrl">
+	<h1><u><b>Changing client's data</b></u></h1>
+	
+	<div class="row">
+				
+		<div class="col-12 col-lg-5">
+		
+			<form>
+
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input id="name" class="form-control" ng-model="client.name"/>
+				</div>
+				<div class="form-group">
+					<label for="surname">Surname</label>
+					<input id="surname" class="form-control" ng-model="client.surname"/>
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone number</label>
+					<input id="phone" class="form-control" ng-model="client.phone"/>
+				</div>
+				<!-- <div class="form-group">
+					<label for="destinacija">Destinacija</label>
+					<input id="destinacija" class="form-control" ng-model="linija.destinacija"/>
+				</div>
+			
+				<div class="form-group">
+					<label for="prevoznik">Prevoznik</label>
+					<select id="prevoznik" class="form-control" ng-model="linija.prevoznikId">
+						<option ng-repeat="prevoznik in prevoznici" value="{{prevoznik.id}}">{{prevoznik.naziv}}</option>
+					</select>
+				</div> -->
+								
+				<button class="btn btn-primary" ng-click="doEdit()">Change</button>
+				
+			</form>
+		
+		</div>
+	</div>
+</div>

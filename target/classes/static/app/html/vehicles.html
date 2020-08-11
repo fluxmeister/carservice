@@ -1,0 +1,90 @@
+<div ng-controller="vehiclesCtrl">
+	<h1><u><b>Vehicles</b></u></h1>
+		<br>
+		<br>
+		<h2>Entering new vehicle data</h2>					
+		<form>
+			<div class="form-group">
+				<label for="year">Year of production</label>
+				<input id="year" class="form-control" ng-model="newVehicle.year"/>
+			</div>
+			<div class="form-group">
+				<label for="fuel">Fuel type</label>
+				<input id="fuel" class="form-control" ng-model="newVehicle.fuel"/>
+			</div>
+			<div class="form-group">
+				<label for="brandMake">Brand and make</label>
+				<input id="brandMake" class="form-control" ng-model="newVehicle.brandMake"/>
+			</div>
+			<div class="form-group">
+				<label for="engine">Engine type</label>
+				<input id="engine" class="form-control" ng-model="newVehicle.engine"/>
+			</div>
+			<div class="form-group">
+				<label for="plates">Plates</label>
+				<input id="plates" class="form-control" ng-model="newVehicle.plates"/>
+			</div>
+			<div class="form-group">
+				<label for="client">Vehicle owner</label>
+				<select id="client" class="form-control" ng-model="newVehicle.clientId">
+					<option ng-repeat="client in clients" value="{{client.id}}">{{client.name}}&nbsp;{{client.surname}}&nbsp;{{client.phone}}</option>
+				</select>
+			</div>
+			<button class="btn btn-primary" ng-click="doAdd()">Add</button>
+			
+		</form>
+		<br>
+		<h2>Vehicle search</h2>
+		<form>
+			<div class="form-group">
+				<label for="plates">Plates</label>
+				<input id="plates" class="form-control" ng-model="searchParams.plates"/>
+			</div>
+		
+			<div class="form-group">
+				<label for="client">Client</label>
+				<select id="client" class="form-control" ng-model="searchParams.clientId">
+					<option ng-repeat="client in clients" value="{{client.id}}">{{client.name}}&nbsp;{{client.surname}}&nbsp;{{client.phone}}</option>
+				</select>
+			</div>
+							
+			<button class="btn btn-primary" ng-click="doSearch()">Search</button>
+			
+		</form>
+		
+		
+		<div class="btn-group float-right">
+			<button ng-disabled="pageNum == 0" ng-click="changePage(-1)" class="btn btn-info">Previous page</button>
+			<button ng-disabled="pageNum >= totalPages - 1" ng-click="changePage(1)" class="btn btn-info">Next page</button>
+		</div>
+		
+		<br>
+	
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Year of make</th>
+					<th>Fuel type</th>
+					<th>Make and model</th>
+					<th>Engine type</th>
+					<th>Plates</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="vehicle in vehicles">
+					<td>{{vehicle.year}}</td>
+					<td>{{vehicle.fuel}}</td>
+					<td>{{vehicle.brandMake}}</td>
+					<td>{{vehicle.engine}}</td>
+					<td>{{vehicle.plates}}</td>
+					 
+					<td>
+						<!-- <button class="btn btn-primary" ng-click="doReserve(Vozilo.id)">Rezerviši</button> -->
+						<button class="btn btn-warning" ng-click="goToEdit(vehicle.id)">Edit</button>
+						<button class="btn btn-danger" ng-click="doDelete(vehicle.id)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+</div>

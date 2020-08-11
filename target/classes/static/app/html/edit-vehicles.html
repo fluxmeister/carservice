@@ -1,0 +1,44 @@
+<div ng-controller="editVehicleCtrl">
+	<h1><u><b>Changing vehicle's data</b></u></h1>
+	
+	<div class="row">
+				
+		<div class="col-12 col-lg-5">
+		
+			<form>
+
+				<div class="form-group">
+					<label for="year">Year of make</label>
+					<input id="year" class="form-control" ng-model="vehicle.year"/>
+				</div>
+				<div class="form-group">
+					<label for="fuel">Fuel type</label>
+					<input id="fuel" class="form-control" ng-model="vehicle.fuel"/>
+				</div>
+				<div class="form-group">
+					<label for="brandMake">Brand and make of vehicle</label>
+					<input id="brandMake" class="form-control" ng-model="vehicle.brandMake"/>
+				</div>
+				<div class="form-group">
+					<label for="engine">Engine type</label>
+					<input id="engine" class="form-control" ng-model="vehicle.engine"/>
+				</div>
+				<div class="form-group">
+					<label for="plates">Plates</label>
+					<input id="plates" class="form-control" ng-model="vehicle.plates"/>
+				</div>
+			
+				<div class="form-group">
+					<label for="clientId">Vehicle owner</label>
+					<select id="clientId" class="form-control" ng-model="vehicle.clientId">
+						<option ng-repeat="client in clients" value="{{client.id}}">{{client.name}}&nbsp;{{client.surname}}&nbsp;{{client.phone}}</option>
+					</select>
+				</div>
+								
+				<button class="btn btn-primary" ng-click="doEdit()">Save changes</button>
+				
+			</form>
+		
+		</div>
+	</div>
+</div>
