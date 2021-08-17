@@ -39,6 +39,7 @@
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item key="org.eclipse.jdt.ui.typecomment.deprecated" value="true"/>
+		<item key="RunnableJar.export.ipwarning" value="false"/>
 	</section>
 	<section name="SourceActionDialog.constructors">
 		<item key="SynchronizedModifier" value="false"/>
